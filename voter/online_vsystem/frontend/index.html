@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>eVote Telangana</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">🗳️ eVote Telangana</div>
+    <ul class="nav-links">
+      <li><a href="index.html" data-nav="home">Home</a></li>
+      <li><a href="index.html" data-nav="user">User Login</a></li>
+      <li><a href="admin_login.html" data-nav="admin">Admin Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home" class="section">
+    <div class="card">
+      <h1>Welcome to eVote Telangana</h1>
+      <p>
+        Cast your vote securely and digitally. This portal provides information
+        about Telangana elections, their importance, and a secure way to vote with
+        face verification.
+      </p>
+      <h3>Why Elections Matter</h3>
+      <ul class="bullets">
+        <li>Ensure democratic representation</li>
+        <li>Shape policies and governance</li>
+        <li>Make your voice count</li>
+      </ul>
+      <h3>Contact</h3>
+      <p>Email: support@evote-ts.gov<br>Helpline: 1800-123-456</p>
+      <div class="cta">
+        <button data-nav="user">User Login</button>
+        <button data-nav="admin" class="secondary">Admin Login</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- USER LOGIN -->
+  <section id="userLogin" class="section hidden">
+    <div class="card">
+      <h2>User Login</h2>
+      <div class="form-row">
+        <input type="text" id="userName" placeholder="Full Name" required>
+        <input type="text" id="userAadhar" placeholder="Aadhaar Number" maxlength="12" required>
+      </div>
+      <button id="userLoginBtn">Proceed</button>
+      <p class="note">Your details are checked against the voter list (CSV) before voting.</p>
+    </div>
+  </section>
+
+  <!-- PARTY TABLE -->
+  <section id="partySection" class="section hidden">
+    <div class="card">
+      <h2>Select Your Party (Telangana)</h2>
+      <table class="table">
+        <thead>
+          <tr><th>Party</th><th>Logo</th><th>Select</th></tr>
+        </thead>
+        <tbody id="partyTableBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CAMERA + VERIFY -->
+  <section id="cameraSection" class="section hidden">
+    <div class="card">
+      <h2>Face Verification</h2>
+      <div class="form-row">
+        <input type="text" id="verifyName" placeholder="Full Name" required>
+        <input type="text" id="verifyAadhar" placeholder="Aadhaar Number" maxlength="12" required>
+      </div>
+      <div class="camera">
+        <video id="video" width="420" height="315" autoplay></video>
+        <canvas id="canvas" width="420" height="315" class="hidden"></canvas>
+      </div>
+      <button id="captureBtn">Capture & Verify</button>
+      <p id="verifyResult" class="status"></p>
+    </div>
+  </section>
+
+  <!-- ADMIN LOGIN -->
+  <section id="adminLogin" class="section hidden">
+    <!-- <div class="card"> -->
+      <h2><a href="admin_login.html"></h2>
+       <div class="card-container">
+    <div class="card">
+      <h2>Welcome!</h2>
+      <p>Please use the navigation to go to the voting page or access the admin panel below.</p>
+      <a href="admin_login.html">
+        <button>Go to Admin Login</button>
+      </a>
+    </div>
+  </div>
+</a>
+      <!-- <div class="form-row">
+        <input type="text" id="adminUser" placeholder="Username" required>
+        <input type="password" id="adminPass" placeholder="Password" required>
+      </div>
+      <button id="adminLoginBtn">Login</button>
+    </div> -->
+  </section>
+
+  <!-- ADMIN DASHBOARD -->
+  <section id="adminDashboard" class="section hidden">
+    <div class="card">
+      <h2>Admin Dashboard</h2>
+      <div id="adminData" class="mono"></div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <p>© 2025 eVote Telangana</p>
+  </footer>
+</body>
+</html>
